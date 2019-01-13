@@ -1,0 +1,11 @@
+- unless @one_frostbytes.empty?
+  .panel.panel-primary
+    .panel-heading: span = t('.one')
+    = render partial: 'table', locals: {frostbytes: @one_frostbytes}
+- unless @all_frostbytes.empty?
+  .panel.panel-success
+    .panel-heading: span = t('.all')
+    = render partial: 'table', locals: {frostbytes: @all_frostbytes}
+
+- if @all_frostbytes.empty? and @one_frostbytes.empty?
+  h3.text-info.text-center = t('.empty')

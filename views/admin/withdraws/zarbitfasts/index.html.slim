@@ -1,0 +1,11 @@
+- unless @one_zarbitfasts.empty?
+  .panel.panel-primary
+    .panel-heading: span = t('.one')
+    = render partial: 'table', locals: {zarbitfasts: @one_zarbitfasts}
+- unless @all_zarbitfasts.empty?
+  .panel.panel-success
+    .panel-heading: span = t('.all')
+    = render partial: 'table', locals: {zarbitfasts: @all_zarbitfasts}
+
+- if @all_zarbitfasts.empty? and @one_zarbitfasts.empty?
+  h3.text-info.text-center = t('.empty')
